@@ -10,17 +10,18 @@ class FractionWidget : public QWidget
 
 public:
     FractionWidget(QWidget *parent = 0);
+    void setFraction(const int numerator, const int denominator);
 
 public slots:
-    void numeratorChanged(int numerator);
-    void denominatorChanged(int denominator);
+    void numeratorChanged(const int numerator);
+    void denominatorChanged(const int denominator);
 
 protected:
     void paintEvent(QPaintEvent *event);
 
 private:
-    unsigned int m_height, m_width;
-    unsigned int m_numerator, m_denominator;
+    int m_height, m_width;
+    int m_numerator, m_denominator;
 };
 
 #endif // FRACTIONWIDGET_H

@@ -9,8 +9,12 @@ MainWindow::MainWindow(QWidget *parent)
     FractionWidget *fw = new FractionWidget(ui->horizontalLayoutWidget);
     ui->horizontalLayout->addWidget(fw);
 
-    connect(ui->spinNumerator, SIGNAL(valueChanged(int)), fw, SLOT(numeratorChanged(int)));
-    connect(ui->spinDenominator, SIGNAL(valueChanged(int)), fw, SLOT(denominatorChanged(int)));
+    fw->setFraction(ui->spinNumerator->value(),
+                    ui->spinDenominator->value());
+    connect(ui->spinNumerator, SIGNAL(valueChanged(int)),
+            fw, SLOT(numeratorChanged(int)));
+    connect(ui->spinDenominator, SIGNAL(valueChanged(int)),
+            fw, SLOT(denominatorChanged(int)));
 }
 
 MainWindow::~MainWindow()

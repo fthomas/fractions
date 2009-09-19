@@ -1,3 +1,4 @@
+#include <QColor>
 #include <QLinearGradient>
 #include <QPainter>
 #include <QPen>
@@ -8,41 +9,46 @@ FractionWidget::FractionWidget(QWidget *parent)
 {
     m_height = parent->height();
     m_width = parent->width();
+    m_numerator = 0;
+    m_denominator = 1;
+}
+
+void FractionWidget::setFraction(const int numerator, const int denominator)
+{
+    m_numerator = numerator;
+    m_denominator = denominator;
+    update();
 }
 
 void FractionWidget::paintEvent(QPaintEvent *event)
 {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
+        m_height = this->height();
+    m_width = this->width();
 
-    QPen penBorder = QPen(Qt::white);
-    penBorder.setWidth(2);
-
-    painter.setPen(penBorder);
-        painter.drawRect(1, 1, m_width-2, m_height-2);
-
-    QLinearGradient grad(0,0,0,m_height);
+    QLinearGradient grad(0, 0, 0, m_height);
     grad.setColorAt(0, QColor(0,192,0));
     grad.setColorAt(1, QColor(0,255,0));
+
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setPen(Qt::NoPen);
     painter.setBrush(grad);
 
+    float fwidth = float(m_width)/float(m_denominator);
 
-
-    for (unsigned int i = 1; i <= m_denominator; i++) {
-
-        float fwidth = float(m_width)/float(m_denominator);
-        int gwidth = fwidth*i;
-                if (i <= m_numerator) {
-            QRect r = QRect(gwidth-fwidth, 1, fwidth+1, m_height-2);
-            painter.drawRect(r);
-        }
-
-        painter.drawLine(gwidth, 0, gwidth, m_height);
-
-
+    for (int i = 1; i <= m_numerator; i++) {
+        painter.drawRect((i-1)*fwidth-1, 1, fwidth+1, m_height-2);
     }
 
+    QPen pen = QPen(Qt::white);
+    pen.setWidth(2);
+    painter.setPen(pen);
+    painter.setBrush(Qt::NoBrush);
+    painter.drawRect(1, 1, m_width-2, m_height-2);
 
+    for (int i = 1; i < m_denominator; i++) {
+        painter.drawLine(i*fwidth, 1, i*fwidth, m_height-2);
+    }
 }
 
 void FractionWidget::numeratorChanged(int numerator)
