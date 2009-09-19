@@ -45,6 +45,8 @@
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <value key="QtVersionId" type="int" >0</value>
+   <value key="addQDumper" type="" ></value>
+   <value key="buildDirectory" type="QString" >/home/frank/fraction</value>
   </valuemap>
  </data>
  <data>
@@ -52,6 +54,7 @@
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
    <value key="QtVersionId" type="int" >0</value>
+   <value key="addQDumper" type="" ></value>
   </valuemap>
  </data>
  <data>
