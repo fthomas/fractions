@@ -11,9 +11,9 @@ MainWindow::MainWindow(QWidget *parent)
     fw->setFraction(ui->spinNumerator->value(),
                     ui->spinDenominator->value());
     connect(ui->spinNumerator, SIGNAL(valueChanged(int)),
-            fw, SLOT(numeratorChanged(int)));
+            fw, SLOT(setNumerator(int)));
     connect(ui->spinDenominator, SIGNAL(valueChanged(int)),
-            fw, SLOT(denominatorChanged(int)));
+            fw, SLOT(setDenominator(int)));
 
 }
 
