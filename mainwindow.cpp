@@ -6,8 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    FractionWidget *fw = new FractionWidget(ui->horizontalLayoutWidget);
-    ui->horizontalLayout->addWidget(fw);
+    FractionWidget *fw = new FractionWidget(ui->widget);
 
     fw->setFraction(ui->spinNumerator->value(),
                     ui->spinDenominator->value());
@@ -15,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
             fw, SLOT(numeratorChanged(int)));
     connect(ui->spinDenominator, SIGNAL(valueChanged(int)),
             fw, SLOT(denominatorChanged(int)));
+
 }
 
 MainWindow::~MainWindow()

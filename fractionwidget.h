@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QPaintEvent>
+#include <QResizeEvent>
 
 class FractionWidget : public QWidget
 {
@@ -11,6 +12,8 @@ class FractionWidget : public QWidget
 public:
     FractionWidget(QWidget *parent = 0);
     void setFraction(const int numerator, const int denominator);
+    //void setBrushEmpty();
+    //void setBrushFilled();
 
 public slots:
     void numeratorChanged(const int numerator);
@@ -20,7 +23,6 @@ protected:
     void paintEvent(QPaintEvent *event);
 
 private:
-    int m_height, m_width;
     int m_numerator, m_denominator;
 };
 

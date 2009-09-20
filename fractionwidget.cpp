@@ -7,8 +7,6 @@
 FractionWidget::FractionWidget(QWidget *parent)
     : QWidget(parent)
 {
-    m_height = parent->height();
-    m_width = parent->width();
     m_numerator = 0;
     m_denominator = 1;
 }
@@ -22,10 +20,12 @@ void FractionWidget::setFraction(const int numerator, const int denominator)
 
 void FractionWidget::paintEvent(QPaintEvent *event)
 {
-        m_height = this->height();
-    m_width = this->width();
+ // this->
+    int width = this->parentWidget()->width();
+    int height = this->parentWidget()->height();
+    this->resize(width, height);
 
-    QLinearGradient grad(0, 0, 0, m_height);
+    QLinearGradient grad(0, 0, 0, height);
     grad.setColorAt(0, QColor(0,192,0));
     grad.setColorAt(1, QColor(0,255,0));
 
@@ -34,20 +34,20 @@ void FractionWidget::paintEvent(QPaintEvent *event)
     painter.setPen(Qt::NoPen);
     painter.setBrush(grad);
 
-    float fwidth = float(m_width)/float(m_denominator);
+    float fwidth = float(width)/float(m_denominator);
 
     for (int i = 1; i <= m_numerator; i++) {
-        painter.drawRect((i-1)*fwidth-1, 1, fwidth+1, m_height-2);
+        painter.drawRect((i-1)*fwidth-1, 1, fwidth+1, height-2);
     }
 
     QPen pen = QPen(Qt::white);
     pen.setWidth(2);
     painter.setPen(pen);
     painter.setBrush(Qt::NoBrush);
-    painter.drawRect(1, 1, m_width-2, m_height-2);
+    painter.drawRect(1, 1, width-4, height-2);
 
     for (int i = 1; i < m_denominator; i++) {
-        painter.drawLine(i*fwidth, 1, i*fwidth, m_height-2);
+        painter.drawLine(i*fwidth, 1, i*fwidth, height-2);
     }
 }
 
