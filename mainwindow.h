@@ -20,8 +20,8 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
-    void on_spinNumerator_valueChanged(int numerator);
-    void on_spinDenominator_valueChanged(int denominator);
+    void on_spinN1_valueChanged(int numerator);
+    void on_spinD1_valueChanged(int denominator);
 };
 
 #endif // MAINWINDOW_H
