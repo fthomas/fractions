@@ -1,5 +1,5 @@
-#ifndef FRACTIONWIDGET_H
-#define FRACTIONWIDGET_H
+#ifndef FRACTIONIMAGE_H
+#define FRACTIONIMAGE_H
 
 #include <QWidget>
 #include <QColor>
@@ -9,13 +9,19 @@
 class FractionWidget : public QWidget
 {
     Q_OBJECT
-
+/*    Q_PROPERTY
+    Q_PROPERTY(QColor)
+    Q_PROPERTY
+    Q_PROPERTY
+  */
 public:
     FractionWidget(QWidget *parent = 0);
     void setFraction(const int numerator, const int denominator);
     void setColors(const QColor &lineColor = Qt::white,
                    const QColor &gradientColor0 = QColor(0,192,0),
                    const QColor &gradientColor1 = QColor(0,255,0));
+//    int numerator(); const
+//    int denominator(); const
 
 public slots:
     void setNumerator(const int numerator);
@@ -32,4 +38,4 @@ private:
            m_gradientColor1;
 };
 
-#endif // FRACTIONWIDGET_H
+#endif // FRACTIONIMAGE_H

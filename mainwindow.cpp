@@ -6,11 +6,13 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    FractionWidget *fw1 = new FractionWidget(ui->widget1);
+    FractionWidget *fw1 = new FractionWidget();
     FractionWidget *fw2 = new FractionWidget(ui->widget2);
     FractionWidget *fw3 = new FractionWidget(ui->widget3);
     FractionWidget *fw4 = new FractionWidget(ui->widget4);
     FractionWidget *fw5 = new FractionWidget(ui->widget5);
+
+    ui->horizontalLayout1->addWidget(fw1);
 
     fw1->setColors(Qt::white, QColor(0,255,0), QColor(128,255,128));
     fw2->setColors(Qt::white, QColor(255,0,191), QColor(255,128,223));

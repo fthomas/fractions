@@ -30,9 +30,12 @@ void FractionWidget::setColors(const QColor &lineColor,
 
 void FractionWidget::paintEvent(QPaintEvent *event)
 {
-    int width = parentWidget()->width();
-    int height = parentWidget()->height();
-    resize(width, height);
+    int width = this->width();
+    int height = this->height();
+//    int width = parentWidget()->width();
+//    int height = parentWidget()->height();
+
+    //    resize(width, height);
 
     QLinearGradient grad(0, 0, 0, height);
     grad.setColorAt(0.0, m_gradientColor0);
