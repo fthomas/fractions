@@ -17,8 +17,8 @@ public:
     int numerator() const { return m_numerator; }
     int denominator() const { return m_denominator; }
     void setColors(const QColor &lineColor = Qt::white,
-                   const QColor &gradientColor0 = QColor(0,255,0),
-                   const QColor &gradientColor1 = QColor(0,255,0));
+                   const QColor &gradientColor0 = Qt::green,
+                   const QColor &gradientColor1 = Qt::darkGreen);
 
 public slots:
     void setNumerator(const int numerator);
