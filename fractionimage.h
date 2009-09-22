@@ -1,31 +1,29 @@
 #ifndef FRACTIONIMAGE_H
 #define FRACTIONIMAGE_H
 
-#include <QWidget>
 #include <QColor>
 #include <QPaintEvent>
-#include <QResizeEvent>
+#include <QWidget>
 
-class FractionWidget : public QWidget
+class FractionImage : public QWidget
 {
     Q_OBJECT
-/*    Q_PROPERTY
-    Q_PROPERTY(QColor)
-    Q_PROPERTY
-    Q_PROPERTY
-  */
+    Q_PROPERTY(int numerator READ numerator WRITE setNumerator)
+    Q_PROPERTY(int denominator READ denominator WRITE setDenominator)
+
 public:
-    FractionWidget(QWidget *parent = 0);
-    void setFraction(const int numerator, const int denominator);
+    FractionImage(QWidget *parent = 0);
+
+    int numerator() const { return m_numerator; }
+    int denominator() const { return m_denominator; }
     void setColors(const QColor &lineColor = Qt::white,
-                   const QColor &gradientColor0 = QColor(0,192,0),
+                   const QColor &gradientColor0 = QColor(0,255,0),
                    const QColor &gradientColor1 = QColor(0,255,0));
-//    int numerator(); const
-//    int denominator(); const
 
 public slots:
     void setNumerator(const int numerator);
     void setDenominator(const int denominator);
+    void setFraction(const int numerator, const int denominator);
 
 protected:
     void paintEvent(QPaintEvent *event);

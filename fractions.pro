@@ -5,7 +5,10 @@ TARGET = fractions
 TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
-    fractionimage.cpp
+    fractionimage.cpp \
+    fractioninput.cpp
 HEADERS += mainwindow.h \
-    fractionimage.h
-FORMS += mainwindow.ui
+    fractionimage.h \
+    fractioninput.h
+FORMS += mainwindow.ui \
+    fractioninput.ui
