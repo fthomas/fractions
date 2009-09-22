@@ -4,17 +4,12 @@
 <context>
     <name>FractionInput</name>
     <message>
-        <location filename="fractioninput.ui" line="31"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="fractioninput.ui" line="62"/>
+        <location filename="fractioninput.ui" line="57"/>
         <source>numerator</source>
         <translation>Zähler</translation>
     </message>
     <message>
-        <location filename="fractioninput.ui" line="95"/>
+        <location filename="fractioninput.ui" line="90"/>
         <source>denominator</source>
         <translation>Nenner</translation>
     </message>
