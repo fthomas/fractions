@@ -12,3 +12,5 @@ HEADERS += mainwindow.h \
     fractioninput.h
 FORMS += mainwindow.ui \
     fractioninput.ui
+TRANSLATIONS += fractions.ts \
+    fractions_de.ts
