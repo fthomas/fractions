@@ -2,7 +2,7 @@ Files: *
 Copyright: © 2009 Frank S. Thomas <frank@blue-dwarf.de>
 License: GPL-3+
 
-Files: list-*.png
+Files: images/list-*.png
 Copyright: © 2007 David Vignoni <david@icon-king.com>
            © 2007 Johann Ollivier Lapeyre <johann@oxygen-icons.org>
            © 2007 Kenneth Wimer <kwwii@bootsplash.org>
@@ -10,4 +10,4 @@ Copyright: © 2007 David Vignoni <david@icon-king.com>
            © 2007 Riccardo Iaconelli <riccardo@oxygen-icons.org>
            © 2007 David Miller <miller@oxygen-icons.org>
 License: LGPL-3+
- These files are from the Oxygen icon theme.
+ These files are from the Oxygen icon theme: http://www.oxygen-icons.org/
