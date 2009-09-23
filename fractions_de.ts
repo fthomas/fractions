@@ -21,5 +21,15 @@
         <source>Fractions</source>
         <translation>Brüche</translation>
     </message>
+    <message>
+        <location filename="mainwindow.cpp" line="10"/>
+        <source>Add fraction</source>
+        <translation>Bruch hinzufügen</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="12"/>
+        <source>Remove fraction</source>
+        <translation>Bruch entfernen</translation>
+    </message>
 </context>
 </TS>

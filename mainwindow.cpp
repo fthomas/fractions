@@ -7,9 +7,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     m_actAdd = new QAction(QIcon(":/images/list-add.png"),
-                            tr("&Add Fraction Bar"), this);
+                            tr("Add fraction"), this);
     m_actRemove = new QAction(QIcon(":/images/list-remove.png"),
-                              tr("&Remove Fraction Bar"), this);
+                              tr("Remove fraction"), this);
+
+    m_actAdd->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_N));
+    m_actRemove->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_R));
 
     connect(m_actAdd, SIGNAL(triggered()), this, SLOT(addFractionBar()));
     connect(m_actRemove, SIGNAL(triggered()), this, SLOT(removeFractionBar()));
@@ -47,7 +50,9 @@ void MainWindow::addFractionBar()
 
     int i = m_hbox.size()-1;
 
-    m_fimg[i]->setColors(m_colors[i%5][0], m_colors[i%5][1], m_colors[i%5][2]);
+    m_fimg[i]->setColors(m_colors[i%5][0],
+                         m_colors[i%5][1],
+                         m_colors[i%5][2]);
 
     connect(m_finp[i], SIGNAL(valuesChanged(int, int)),
             m_fimg[i], SLOT(setFraction(int, int)));
