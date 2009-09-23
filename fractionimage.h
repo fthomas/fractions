@@ -2,7 +2,9 @@
 #define FRACTIONIMAGE_H
 
 #include <QColor>
+#include <QMouseEvent>
 #include <QPaintEvent>
+#include <QWheelEvent>
 #include <QWidget>
 
 class FractionImage : public QWidget
@@ -20,6 +22,9 @@ public:
                    const QColor &gradientColor0 = Qt::green,
                    const QColor &gradientColor1 = Qt::darkGreen);
 
+signals:
+    void fractionChanged(int numerator, int denominator);
+
 public slots:
     void setNumerator(const int numerator);
     void setDenominator(const int denominator);
@@ -27,6 +32,8 @@ public slots:
 
 protected:
     void paintEvent(QPaintEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void wheelEvent(QWheelEvent *event);
 
 private:
     int m_numerator,

@@ -13,7 +13,10 @@ public:
     FractionInput(QWidget *parent = 0);
 
 signals:
-    void valueChanged(int numerator, int denominator);
+    void valuesChanged(int numerator, int denominator);
+
+public slots:
+    void setValues(const int numerator, const int denominator);
 
 private slots:
     void on_spinNumerator_valueChanged(const int numerator);

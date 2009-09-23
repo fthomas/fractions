@@ -2,4 +2,8 @@
     <qresource prefix="/translations" >
         <file>fractions_de.qm</file>
     </qresource>
+    <qresource prefix="/images" >
+        <file>list-add.png</file>
+        <file>list-remove.png</file>
+    </qresource>
 </RCC>

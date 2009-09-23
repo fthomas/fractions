@@ -46,7 +46,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <value key="QtVersionId" type="int" >0</value>
    <value key="addQDumper" type="" ></value>
-   <value key="buildDirectory" type="QString" >/home/frank/fractions</value>
+   <value key="buildDirectory" type="QString" >/home/frank/radix/forum/code/fractions/trunk</value>
   </valuemap>
  </data>
  <data>
@@ -110,7 +110,7 @@
     <value type="QString" >XDM_MANAGED=method=classic</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
-    <value type="QString" >/home/frank/fractions/fractions.pro</value>
+    <value type="QString" >/home/frank/radix/forum/code/fractions/trunk/fractions.pro</value>
     <value type="QString" >-spec</value>
     <value type="QString" >/usr/share/qt4/mkspecs/linux-g++</value>
     <value type="QString" >-r</value>
@@ -118,7 +118,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString" >/usr/bin/qmake-qt4</value>
    <value key="abstractProcess.enabled" type="bool" >false</value>
-   <value key="abstractProcess.workingDirectory" type="QString" >/home/frank/fractions</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/frank/radix/forum/code/fractions/trunk</value>
    <value key="buildConfiguration" type="int" >2</value>
   </valuemap>
  </data>
@@ -179,7 +179,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString" >/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool" >true</value>
-   <value key="abstractProcess.workingDirectory" type="QString" >/home/frank/fractions</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/frank/radix/forum/code/fractions/trunk</value>
   </valuemap>
  </data>
  <data>

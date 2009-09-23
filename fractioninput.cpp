@@ -6,6 +6,12 @@ FractionInput::FractionInput(QWidget *parent)
     setupUi(this);
 }
 
+void FractionInput::setValues(const int numerator, const int denominator)
+{
+    spinNumerator->setValue(numerator);
+    spinDenominator->setValue(denominator);
+}
+
 void FractionInput::on_spinNumerator_valueChanged(const int numerator)
 {
     int denominator = spinDenominator->value();
@@ -13,7 +19,7 @@ void FractionInput::on_spinNumerator_valueChanged(const int numerator)
         denominator = numerator;
         spinDenominator->setValue(denominator);
     }
-    emit valueChanged(numerator, denominator);
+    emit valuesChanged(numerator, denominator);
 }
 
 void FractionInput::on_spinDenominator_valueChanged(const int denominator)
@@ -23,5 +29,5 @@ void FractionInput::on_spinDenominator_valueChanged(const int denominator)
         numerator = denominator;
         spinNumerator->setValue(numerator);
     }
-    emit valueChanged(numerator, denominator);
+    emit valuesChanged(numerator, denominator);
 }

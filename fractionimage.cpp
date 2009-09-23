@@ -68,3 +68,26 @@ void FractionImage::paintEvent(QPaintEvent *event)
         painter.drawLine(i*fwidth, 1, i*fwidth, height-2);
     }
 }
+
+void FractionImage::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton) {
+        int width = this->width();
+        int x = event->pos().x();
+        m_numerator = float(x)/float(width)*m_denominator+1;
+    } else if (event->button() == Qt::RightButton) {
+        m_numerator = 0;
+    }
+    emit fractionChanged(m_numerator, m_denominator);
+    update();
+}
+
+void FractionImage::wheelEvent(QWheelEvent *event) {
+    if (event->delta() > 0 && m_denominator < 100) {
+        m_denominator++;
+    } else if (event->delta() < 0 && m_denominator > 1) {
+        m_denominator--;
+    }
+    emit fractionChanged(m_numerator, m_denominator);
+    update();
+}
