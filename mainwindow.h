@@ -27,7 +27,7 @@ private:
     Ui::MainWindow *ui;
     QAction *m_actAdd,
             *m_actRemove;
-    QColor m_colors[5][3];
+    QColor m_colors[6][3];
     QList<QHBoxLayout*> m_hbox;
     QList<FractionInput*> m_finp;
     QList<FractionImage*> m_fimg;

@@ -25,12 +25,14 @@ MainWindow::MainWindow(QWidget *parent)
     m_colors[2][0] = Qt::white;
     m_colors[3][0] = Qt::white;
     m_colors[4][0] = Qt::white;
+    m_colors[5][0] = Qt::white;
 
     m_colors[0][1] = QColor(  0,255,  0); m_colors[0][2] = QColor(128,255,128);
     m_colors[1][1] = QColor(255,  0,191); m_colors[1][2] = QColor(255,128,223);
     m_colors[2][1] = QColor( 43,116,199); m_colors[2][2] = QColor( 96,148,207);
     m_colors[3][1] = QColor(255,213,  0); m_colors[3][2] = QColor(255,255,  0);
     m_colors[4][1] = QColor(255,  0,  0); m_colors[4][2] = QColor(255,128,128);
+    m_colors[5][1] = QColor(0,  197,204); m_colors[5][2] = QColor(  0,167,179);
 
     addFractionBar();
     addFractionBar();
@@ -50,9 +52,9 @@ void MainWindow::addFractionBar()
 
     int i = m_hbox.size()-1;
 
-    m_fimg[i]->setColors(m_colors[i%5][0],
-                         m_colors[i%5][1],
-                         m_colors[i%5][2]);
+    m_fimg[i]->setColors(m_colors[i%6][0],
+                         m_colors[i%6][1],
+                         m_colors[i%6][2]);
 
     connect(m_finp[i], SIGNAL(valuesChanged(int, int)),
             m_fimg[i], SLOT(setFraction(int, int)));
