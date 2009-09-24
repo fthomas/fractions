@@ -83,7 +83,7 @@ void FractionImage::mousePressEvent(QMouseEvent *event)
 }
 
 void FractionImage::wheelEvent(QWheelEvent *event) {
-    if (event->delta() > 0 && m_denominator < 100) {
+    if (event->delta() > 0 && m_denominator < 99) {
         m_denominator++;
     } else if (event->delta() < 0 && m_denominator > 1) {
         m_denominator--;
