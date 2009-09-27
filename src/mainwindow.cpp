@@ -46,6 +46,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::addFractionBar()
 {
+    m_actRemove->setEnabled(true);
+
     m_hbox.append(new QHBoxLayout());
     m_finp.append(new FractionInput());
     m_fimg.append(new FractionImage());
@@ -74,6 +76,8 @@ void MainWindow::removeFractionBar()
     int i = m_hbox.size()-1;
     if (i <= 0) {
         return;
+    } else if (i == 1) {
+        m_actRemove->setDisabled(true);
     }
 
     delete m_fimg[i];
